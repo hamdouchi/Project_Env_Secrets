@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - dev
 env:
   MONGODB_DB_NAME: test_db
   PORT: 3000
@@ -12,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.b7pkl2r.mongodb.net
-      MONGODB_USERNAME: hamdouchimed
-      MONGODB_PASSWORD: IAfY005IRm5LLRac
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
     steps:
       - name: Get Code
         uses: actions/checkout@v3

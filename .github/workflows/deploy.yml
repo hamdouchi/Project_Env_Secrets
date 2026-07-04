@@ -9,7 +9,6 @@ env:
   PORT: 3000
 jobs:
   test:
-    environment: testing
     runs-on: ubuntu-latest
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.b7pkl2r.mongodb.net
@@ -31,6 +30,9 @@ jobs:
         run: npm test
       - name: Output information
         run: |
+          echo "MONGODB_USERNAME: $MONGODB_USERNAME"
+          echo "MONGODB_PASSWORD: $MONGODB_PASSWORD"
+          echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
           echo "PORT: $PORT"
   deploy:
     needs: test

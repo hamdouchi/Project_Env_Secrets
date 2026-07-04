@@ -9,6 +9,7 @@ env:
   PORT: 3000
 jobs:
   test:
+    environment: testing
     runs-on: ubuntu-latest
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.b7pkl2r.mongodb.net

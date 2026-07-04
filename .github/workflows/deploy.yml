@@ -2,8 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - main
-      - dev
+      - master
 env:
   MONGODB_DB_NAME: test_db
   PORT: 3000
